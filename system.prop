@@ -35,6 +35,7 @@ persist.vendor.audio.speaker.prot.enable=false
 vendor.audio.offload.multiaac.enable=true
 vendor.audio.flac.sw.decoder.24bit=true
 ro.config.media_vol_steps=25
+ro.config.vc_call_vol_steps=7
 
 # Bluetooth
 bluetooth.hfp.client=1
