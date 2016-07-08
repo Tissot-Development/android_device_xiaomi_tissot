@@ -198,6 +198,11 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
+# Glove mode
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8953 \
