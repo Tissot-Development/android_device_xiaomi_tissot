@@ -168,6 +168,7 @@ telephony.lteOnCdmaDevice=1
 
 # Time Services
 persist.timed.enable=true
+persist.delta_time.enable=true
 
 # Tcp
 net.tcp.2g_init_rwnd=10
