@@ -35,6 +35,9 @@ persist.vendor.audio.speaker.prot.enable=false
 vendor.audio.offload.multiaac.enable=true
 vendor.audio.flac.sw.decoder.24bit=true
 
+#low audio flinger standby delay to reduce power consumption
+ro.audio.flinger_standbytime_ms=300
+
 # Bluetooth
 bluetooth.hfp.client=1
 qcom.bluetooth.soc=smd
