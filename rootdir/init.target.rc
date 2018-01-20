@@ -184,7 +184,7 @@ service hvdcp_opti /system/vendor/bin/hvdcp_opti
     user root
     group system wakelock
 
-service readmac /system/bin/readmac
+service readmac /system/vendor/bin/readmac
     class main
     user root
     group root
