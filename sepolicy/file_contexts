@@ -33,3 +33,6 @@
 
 # Keylayout
 /vendor/usr/keylayout(/.*)?                             u:object_r:keylayout:s0
+
+# Offmode Charging
+/(vendor|system/vendor)/bin/chargeonlymode             u:object_r:charge_only_exec:s0

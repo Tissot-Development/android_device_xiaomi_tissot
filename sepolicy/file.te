@@ -21,3 +21,6 @@ type keylayout, fs_type, sysfs_type;
 
 # ExFAT
 type sysfs_exfat, fs_type, sysfs_type;
+
+# Offmode Charging
+type chargeonly_data_file, file_type, data_file_type;
