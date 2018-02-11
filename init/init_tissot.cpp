@@ -25,9 +25,16 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <cstdlib>
+#include <fstream>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include <sys/sysinfo.h>
+#include <unistd.h>
+
+#include <android-base/strings.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
@@ -70,6 +77,15 @@ static void init_alarm_boot_properties()
      } else {
         property_set("ro.alarm_boot", "false");
      }
+}
+
+static void init_finger_print_properties()
+{
+	if (access("/persist/data/fingerprint_version", 0) == -1) {
+		property_set("ro.boot.fingerprint", "fpc");
+	} else {
+		property_set("ro.boot.fingerprint", "goodix");
+	}
 }
 
 void check_device()
