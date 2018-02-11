@@ -1,0 +1,4 @@
+#For goodix fingerprint permissions checking
+binder_call(fingerprintd, goodixfingerprintd);
+
+allow fingerprintd goodixfingerprintd_service:service_manager find;
