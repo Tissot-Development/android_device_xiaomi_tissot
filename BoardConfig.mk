@@ -109,12 +109,6 @@ TARGET_TS_MAKEUP := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
-# CMHW
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw \
-    device/xiaomi/tissot/cmhw
-
 # CNE / DPM
 BOARD_USES_QCNE := true
 
@@ -151,6 +145,10 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 # GPS
 USE_DEVICE_SPECIFIC_GPS := true
 TARGET_NO_RPC := true
+
+# Lineage Hardware
+BOARD_HARDWARE_CLASS += \
+    $(LOCAL_PATH)/lineagehw
 
 # Filesystem
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(LOCAL_PATH)/android_filesystem_config.h
