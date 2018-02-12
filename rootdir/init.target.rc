@@ -32,14 +32,12 @@ on early-init
     mkdir /system 0777 root root
     symlink /data/tombstones /tombstones
     mkdir /dsp 0771 media media
+    mkdir /cust 0775 system system
 
 on fs
     wait /dev/block/bootdevice
 
     mount_all fstab.qcom
-
-    wait /dev/block/bootdevice/by-name/oem
-    mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
     
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -61,6 +59,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 
 on init
    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+   chmod 0666 sys/class/power_supply/battery/constant_charge_current_max
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
@@ -215,6 +214,9 @@ service energy-awareness /system/bin/energy-awareness
     oneshot
 
 on boot
+	write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/fw_name PR1702898-s3528t_00260005_00380008.img
+	write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/update_fw 1
+
 	write /dev/cpuset/top-app/cpus 0-7
 	write /dev/cpuset/top-app/boost/cpus 4-7
 	write /dev/cpuset/foreground/cpus 0-6
@@ -230,3 +232,4 @@ on boot
 	chown system system /dev/cpuset/camera-daemon
 	chown system system /dev/cpuset/camera-daemon/tasks
 	chmod 0664 /dev/cpuset/camera-daemon/tasks
+

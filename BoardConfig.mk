@@ -122,7 +122,7 @@ BOARD_USES_QCNE := true
 ENABLE_CPUSETS := true
 
 # Crypto
-TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false
 
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
@@ -226,9 +226,6 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME := "wlan"
-
-# Disable HW based full disk encryption
-TARGET_HW_DISK_ENCRYPTION := false
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/tissot/BoardConfigVendor.mk

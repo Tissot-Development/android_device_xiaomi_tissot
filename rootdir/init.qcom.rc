@@ -87,8 +87,10 @@ on boot
     chown bluetooth bluetooth /sys/module/hci_uart/parameters/ath_btwrite
     chown system system /sys/module/sco/parameters/disable_esco
     chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
+    chown system system /sys/module/radio_iris_transport/parameters/fmsmd_set
     chmod 0660 /sys/module/bluetooth_power/parameters/power
     chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
+    chmod 0660 /sys/module/radio_iris_transport/parameters/fmsmd_set
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /proc/bluetooth/sleep/proto
     chown bluetooth net_bt /dev/ttyHS0
@@ -124,9 +126,11 @@ on boot
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
 
+    #enable camera read sensors data
+    setprop persist.camera.gyro.disable 0
+
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
-
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
@@ -178,10 +182,19 @@ on boot
     # bond0 used by FST Manager
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
-    # Fingerprint
-    chown system system /dev/goodix_fp
-    chmod 0644 /dev/goodix_fp
+    # Allow access to emmc rawdump block partition and dload sysfs node
+    chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
+    chmod 0660 /dev/block/bootdevice/by-name/rawdump -p /dev/block/
+    chown root system /sys/kernel/dload/emmc_dload
+    chmod 0660 /sys/kernel/dload/emmc_dload
 
+    # add for fingerprint
+    setprop sys.fp.goodix 1 
+    setprop sys.fp.vendor null
+    setprop sys.fp.miui.token 0
+    setprop vold.debug 1
+
+    # add for fpc 
     chown system system /sys/devices/soc/soc:fpc1020/compatible_all
     chmod 0664 /sys/devices/soc/soc:fpc1020/compatible_all
     chown system system /sys/devices/soc/soc:fpc1020/irq
@@ -190,26 +203,12 @@ on boot
     chmod 0660 /sys/devices/soc/soc:fpc1020/hw_reset
     chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
     chmod 0660 /sys/devices/soc/soc:fpc1020/wakeup_enable
-    chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
-    chmod 0660 /sys/devices/soc/soc:fpc1020/wakeup_enable
+    
+    # add for goodix 
+    chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
 
-    # Glove Mode
-    chown system system /sys/class/tp_glove/device/glove_enable
-    chmod 0660 /sys/class/tp_glove/device/glove_enable
-
-    # Notification LED
-    chown system system /sys/class/leds/red/blink
-    chown system system /sys/class/leds/green/blink
-    chown system system /sys/class/leds/blue/blink
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/green/brightness
-    chown system system /sys/class/leds/blue/brightness
-
-    # Allow access to emmc rawdump block partition and dload sysfs node
-    chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
-    chmod 0660 /dev/block/bootdevice/by-name/rawdump -p /dev/block/
-    chown root system /sys/kernel/dload/emmc_dload
-    chmod 0660 /sys/kernel/dload/emmc_dload
+    setprop ro.hardware goodix
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -266,9 +265,6 @@ on post-fs-data
 
     # Create directory used by display clients
     mkdir /data/misc/display 0770 system graphics
-
-    # Create dir for fpc
-    mkdir /data/fpc 0770 system system
 
     # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
     # We chown/chmod /persist again so because mount is run as root + defaults
@@ -373,20 +369,12 @@ on post-fs-data
     mkdir /data/system/swap 0770 root system
     chmod 2770 /data/system/swap
 
-    # Sensors
-    chmod 0775 /persist/sensors
-    chmod 0664 /persist/sensors/sensors_settings
-    chown system root /persist/sensors/sensors_settings
-    mkdir /data/misc/sensors
-    chmod 0775 /data/misc/sensors
-
     # set aggressive read ahead for dm-0 and dm-1 during boot up
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
 
-
-    #WAPI
-    mkdir /data/misc/wapi_certificate 0770 system wifi
+    # add for fpc
+    mkdir /data/fpc 0770 system system
 
 service perfd /system/vendor/bin/perfd
    class main
@@ -414,6 +402,8 @@ on property:sys.boot_completed=1
     write /sys/block/dm-1/queue/read_ahead_kb 512
     #WDSP FW boot sysfs node used by STHAL
     chown media audio /sys/kernel/wdsp0/boot
+    #CPE fw_name used by sound trigger HAL
+    chown media audio /sys/kernel/wcd_cpe0/fw_nam
 
 on property:vold.decrypt=trigger_restart_framework
     start config_bt_addr
@@ -622,56 +612,37 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     group system
     writepid /dev/cpuset/system-background/tasks
 
-on charger
-    setprop persist.sys.usb.config charging
-
-on property:vold.decrypt=trigger_restart_min_framework
-    start time_daemon
-
-on property:vold.decrypt=trigger_restart_framework
-    restart time_daemon
-	
-    # add for fingerprint 
-    setprop sys.fp.goodix 1
-    setprop sys.fp.vendor null
-    setprop sys.fp.miui.token 0
-    setprop vold.debug 1
-
-    # add for fpc 
-    chown system system /sys/devices/soc/soc:fpc1020/compatible_all
-    chmod 0664 /sys/devices/soc/soc:fpc1020/compatible_all
-    chown system system /sys/devices/soc/soc:fpc1020/irq
-    chmod 0660 /sys/devices/soc/soc:fpc1020/irq
-    chown system system /sys/devices/soc/soc:fpc1020/hw_reset
-    chmod 0660 /sys/devices/soc/soc:fpc1020/hw_reset
-    chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
-    chmod 0660 /sys/devices/soc/soc:fpc1020/wakeup_enable
-    chown system system /sys/devices/soc/soc:fpc1020/fingerdown_wait
-    chmod 0660 /sys/devices/soc/soc:fpc1020/fingerdown_wait
-
-    # add for goodix 
-    chown system system /dev/goodix_fp
-    chmod 0644 /dev/goodix_fp
-
-    class_start core
-    setprop ro.hardware goodix
-
 service goodixfpd /system/bin/goodixfingerprintd
     class late_start
     user root
-    group system
+    group system  
 
 on property:sys.fp.goodix=0
    stop goodixfpd
 
 on property:sys.fp.vendor=goodix
    setprop ro.boot.fpsensor goodix
-   setprop persist.sys.fp.vendor goodix
 
 on property:sys.fp.vendor=FPC
    setprop ro.boot.fpsensor fpc
 
 service fingerprintd /system/bin/fingerprintd
     class late_start
-    user system 
+    user system
     group system sdcard_rw
+	system system
+	writepid /dev/cpuset/system-background/tasks
+
+on charger
+    setprop persist.sys.usb.config charging
+    wait /dev/block/bootdevice/by-name/persist
+    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
+    mkdir /persist/data 0700 system system
+    mkdir /persist/bms 0700 root system
+    restorecon_recursive /persist
+
+on property:vold.decrypt=trigger_restart_min_framework
+    start time_daemon
+
+on property:vold.decrypt=trigger_restart_framework
+    restart time_daemon

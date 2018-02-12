@@ -96,16 +96,22 @@ etc/firmware/rampatch_tlv_3.0.tlv
 etc/firmware/rampatch_tlv_3.2.tlv
 
 # Camera
-bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 lib/hw/camera.msm8953.so
+lib/libcamera_client.so
+lib/libcamera_metadata.so
+lib/libcameraservice.so
 lib/libMiCameraHal.so
+lib/libminui.so
 lib/libmm-qcamera.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
+lib/libmorpho_groupshot.so
+lib/libmorpho_memory_allocator.so
 lib/libmorpho_panorama.so
 lib64/libmorpho_memory_allocator.so
 lib64/libmorpho_panorama.so
+vendor/lib/lib_lowlight.so
 vendor/lib/libarcsoft_beautyshot.so
 vendor/lib/libarcsoft_beautyshot_image_algorithm.so
 vendor/lib/libarcsoft_beautyshot_video_algorithm.so
@@ -208,7 +214,6 @@ vendor/lib/libmmcamera_quadracfa.so
 vendor/lib/libmmcamera_s5k5e8_ofilm.so
 vendor/lib/libmmcamera_stillmore_lib.so
 vendor/lib/libmmcamera_sw2d_lib.so
-vendor/lib/libmmcamera_sw_tnr.so
 vendor/lib/libmmcamera_thread_services.so
 vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tintless_bg_pca_algo.so
@@ -225,6 +230,7 @@ vendor/lib/libmorpho_panorama_gp.so
 vendor/lib/libmpbase.so
 vendor/lib/libois_lc898122.so
 vendor/lib/liboptizoom.so
+vendor/lib/libmmqjpegdma.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
@@ -499,6 +505,131 @@ vendor/lib/libchromatix_s5k5e8_ofilm_snapshot.so
 vendor/lib/libchromatix_s5k5e8_ofilm_zsl_preview_3a.so
 vendor/lib/libchromatix_s5k5e8_ofilm_zsl_video_3a.so
 
+# Clean these
+etc/camera/s5k5e8_qtech_chromatix.xml
+etc/camera/s5k5e8_sunny_chromatix.xml
+vendor/lib/libactuator_ofilm_dw9763.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_4k_preview_dw9763.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_4k_video_dw9763.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_common.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_cpp_hfr_120.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_cpp_hfr_60.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_cpp_hfr_90.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_cpp_liveshot.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_cpp_preview.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_cpp_snapshot.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_cpp_video.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_cpp_video_4k.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_default_preview_dw9763.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_default_video_dw9763.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_hfr_120.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_hfr_120_dw9763.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_hfr_60.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_hfr_60_dw9763.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_hfr_90.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_hfr_90_dw9763.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_postproc.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_preview.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_snapshot.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_video_4k.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_zsl_preview_dw9763.so
+vendor/lib/libchromatix_ov12a10_ofilm_c6a_zsl_video_dw9763.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_common.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_cpp_hfr_120.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_cpp_hfr_60.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_cpp_hfr_90.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_cpp_liveshot.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_cpp_preview.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_cpp_snapshot.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_cpp_video.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_default_preview_3a.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_default_video.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_default_video_3a.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_hfr_120.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_hfr_120_3a.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_hfr_60.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_hfr_60_3a.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_hfr_90.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_hfr_90_3a.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_liveshot.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_postproc.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_preview.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_snapshot.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_zsl_preview_3a.so
+vendor/lib/libchromatix_s5k5e8_ofilm_c6a_zsl_video_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_common.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_cpp_hfr_120.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_cpp_hfr_60.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_cpp_hfr_90.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_cpp_liveshot.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_cpp_preview.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_cpp_snapshot.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_cpp_video.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_default_preview_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_default_video.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_default_video_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_hfr_120.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_hfr_120_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_hfr_60.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_hfr_60_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_hfr_90.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_hfr_90_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_liveshot.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_postproc.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_preview.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_snapshot.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_zsl_preview_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_c6a_zsl_video_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_common.so
+vendor/lib/libchromatix_s5k5e8_qtech_cpp_hfr_120.so
+vendor/lib/libchromatix_s5k5e8_qtech_cpp_hfr_60.so
+vendor/lib/libchromatix_s5k5e8_qtech_cpp_hfr_90.so
+vendor/lib/libchromatix_s5k5e8_qtech_cpp_liveshot.so
+vendor/lib/libchromatix_s5k5e8_qtech_cpp_preview.so
+vendor/lib/libchromatix_s5k5e8_qtech_cpp_snapshot.so
+vendor/lib/libchromatix_s5k5e8_qtech_cpp_video.so
+vendor/lib/libchromatix_s5k5e8_qtech_default_preview_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_default_video.so
+vendor/lib/libchromatix_s5k5e8_qtech_default_video_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_hfr_120.so
+vendor/lib/libchromatix_s5k5e8_qtech_hfr_120_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_hfr_60.so
+vendor/lib/libchromatix_s5k5e8_qtech_hfr_60_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_hfr_90.so
+vendor/lib/libchromatix_s5k5e8_qtech_hfr_90_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_liveshot.so
+vendor/lib/libchromatix_s5k5e8_qtech_postproc.so
+vendor/lib/libchromatix_s5k5e8_qtech_preview.so
+vendor/lib/libchromatix_s5k5e8_qtech_snapshot.so
+vendor/lib/libchromatix_s5k5e8_qtech_zsl_preview_3a.so
+vendor/lib/libchromatix_s5k5e8_qtech_zsl_video_3a.so
+vendor/lib/libchromatix_s5k5e8_sunny_common.so
+vendor/lib/libchromatix_s5k5e8_sunny_cpp_hfr_120.so
+vendor/lib/libchromatix_s5k5e8_sunny_cpp_hfr_60.so
+vendor/lib/libchromatix_s5k5e8_sunny_cpp_hfr_90.so
+vendor/lib/libchromatix_s5k5e8_sunny_cpp_liveshot.so
+vendor/lib/libchromatix_s5k5e8_sunny_cpp_preview.so
+vendor/lib/libchromatix_s5k5e8_sunny_cpp_snapshot.so
+vendor/lib/libchromatix_s5k5e8_sunny_cpp_video.so
+vendor/lib/libchromatix_s5k5e8_sunny_default_preview_3a.so
+vendor/lib/libchromatix_s5k5e8_sunny_default_video.so
+vendor/lib/libchromatix_s5k5e8_sunny_default_video_3a.so
+vendor/lib/libchromatix_s5k5e8_sunny_hfr_120.so
+vendor/lib/libchromatix_s5k5e8_sunny_hfr_120_3a.so
+vendor/lib/libchromatix_s5k5e8_sunny_hfr_60.so
+vendor/lib/libchromatix_s5k5e8_sunny_hfr_60_3a.so
+vendor/lib/libchromatix_s5k5e8_sunny_hfr_90.so
+vendor/lib/libchromatix_s5k5e8_sunny_hfr_90_3a.so
+vendor/lib/libchromatix_s5k5e8_sunny_liveshot.so
+vendor/lib/libchromatix_s5k5e8_sunny_postproc.so
+vendor/lib/libchromatix_s5k5e8_sunny_preview.so
+vendor/lib/libchromatix_s5k5e8_sunny_snapshot.so
+vendor/lib/libchromatix_s5k5e8_sunny_zsl_preview_3a.so
+vendor/lib/libchromatix_s5k5e8_sunny_zsl_video_3a.so
+vendor/lib/libmmcamera_s5k5e8_qtech.so
+vendor/lib/libmmcamera_s5k5e8_sunny.so
+
+
 # Camera configs
 etc/camera/camera_config.xml
 etc/camera/csidtg_camera.xml
@@ -513,7 +644,6 @@ etc/camera/ov13880_arc_chromatix.xml
 etc/camera/ov13880_arc_ofilm_chromatix.xml
 etc/camera/ov13880_chromatix.xml
 etc/camera/ov13880_ofilm_chromatix.xml
-etc/camera/s5k5e8_ofilm_c6a_chromatix.xml
 etc/camera/s5k5e8_ofilm_chromatix.xml
 
 # Camera firmware
@@ -569,6 +699,9 @@ vendor/lib64/libcneqmiutils.so
 vendor/lib64/libvendorconn.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
+
+# Consumer IR
+lib64/hw/consumerir.default.so
 
 # DPM
 bin/dpmd
@@ -632,11 +765,18 @@ vendor/lib64/libtzdrmgenprov.so
 -etc/qdcm_calib_data_nt35596_tianma_fhd_video_mode_dsi_panel.xml
 
 # Fingerprint
+bin/fingerprintd
+bin/fpc_fingerprint_hal-test
+bin/goodixfingerprintd
 lib/hw/fingerprint.default.so
 lib64/hw/fingerprint.default.so
 lib64/hw/gf_fingerprint.default.so
 lib/lib_fpc_tac_shared.so
 lib64/lib_fpc_tac_shared.so
+lib64/libgf_algo.so
+lib64/libgf_ca.so
+lib64/libgf_hal.so
+lib64/libgoodixfingerprintd_binder.so
 
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8953.so
@@ -722,7 +862,6 @@ vendor/lib/libc2d30_bltlib.so
 vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvd_smore.so
-vendor/lib/libllvd_sw_tnr.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libllvm-qgl.so
@@ -776,6 +915,8 @@ etc/firmware/a506_zap.b01
 etc/firmware/a506_zap.b02
 etc/firmware/a506_zap.elf
 etc/firmware/a506_zap.mdt
+etc/firmware/a530_pfp.fw
+etc/firmware/a530_pm4.fw
 
 # HBTP
 etc/firmware/hbtp/hbtpcfg.dat
@@ -950,7 +1091,7 @@ bin/imsqmidaemon
 etc/permissions/imscm.xml
 framework/imscmlibrary.jar
 framework/rcsimssettings.jar
-vendor/lib/lib-imsrcscmservice.so
+vendor/framework/qti-vzw-ims-internal.jar
 vendor/lib64/lib-dplmedia.so
 vendor/lib64/lib-ims-rcscmjni.so
 vendor/lib64/lib-imscamera.so
