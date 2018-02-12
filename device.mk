@@ -258,6 +258,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
 
+# Whitelisted app
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/whitelistedapps.xml:system/etc/sysconfig/whitelistedapps.xml 
+
 # Wifi
 PRODUCT_PACKAGES += \
     libqsap_sdk \
