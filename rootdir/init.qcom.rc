@@ -612,17 +612,17 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     group system
     writepid /dev/cpuset/system-background/tasks
 
-service goodixfingerprintd /system/bin/goodixfingerprintd
+service goodixfpd /system/bin/goodixfingerprintd
     class late_start
     user root
     group system  
 
 on property:sys.fp.goodix=0
-   stop goodixfingerprintd
+   stop goodixfpd
 
 on property:sys.fp.vendor=goodix
    setprop ro.boot.fpsensor goodix
-   start goodixfingerprintd
+   start goodixfpd
 
 on property:sys.fp.vendor=FPC
    setprop ro.boot.fpsensor fpc
