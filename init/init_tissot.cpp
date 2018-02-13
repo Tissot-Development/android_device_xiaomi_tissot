@@ -34,8 +34,6 @@
 #include <sys/sysinfo.h>
 #include <unistd.h>
 
-#include <android-base/strings.h>
-
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
