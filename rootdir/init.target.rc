@@ -233,3 +233,35 @@ on boot
 	chown system system /dev/cpuset/camera-daemon/tasks
 	chmod 0664 /dev/cpuset/camera-daemon/tasks
 
+#For Flash
+service whiteflashon /system/bin/factory_bin w 1
+    user root
+    oneshot
+    disabled
+
+on property:sys.whiteflashon=1
+    start whiteflashon
+
+service whiteflashoff /system/bin/factory_bin w 0
+    user root
+    oneshot
+    disabled
+
+on property:sys.whiteflashoff=1
+    start whiteflashoff
+
+service yellowflashon /system/bin/factory_bin y 1
+    user root
+    oneshot
+    disabled
+
+on property:sys.yellowflashon=1
+    start yellowflashon
+
+service yellowflashoff /system/bin/factory_bin y 0
+    user root
+    oneshot
+    disabled
+
+on property:sys.yellowflashoff=1
+    start yellowflashoff
