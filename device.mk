@@ -199,6 +199,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.msm8953 \
     libcurl \
+    libgnss \
     libgnsspps
     
 PRODUCT_PACKAGES += \

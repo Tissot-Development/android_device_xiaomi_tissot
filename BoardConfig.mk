@@ -202,7 +202,7 @@ BOARD_RIL_CLASS := ../../../$(DEVICE_PATH)/ril
 TARGET_RIL_VARIANT := caf
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery/fstab.qcom
 
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
