@@ -33,7 +33,10 @@ on early-init
     chmod 0755 /sys/kernel/debug
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
-
+    
+    mkdir /firmware 0771 root system
+    mkdir /bt_firmware 0771 root system
+    
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 root system

@@ -44,17 +44,19 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.msm8953 \
-    librecovery_updater_msm8953 \
-    libsparse_static
-
+    libgptutils \
+    libz
+PRODUCT_PACKAGES += \
+    update_engine_sideload
+    
 PRODUCT_NAME := lineage_tissot
 BOARD_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT="xiaomi/tissot/tissot_sprout:7.1.2/N2G47H/7.12.19:user/release-keys" \
-    PRIVATE_BUILD_DESC="tissot-user 7.1.2 N2G47H 7.12.19 release-keys"
+    BUILD_FINGERPRINT="xiaomi/tissot/mido:7.0/NRD90M/V8.5.4.0.NCFMIED:user/release-keys" \
+    PRIVATE_BUILD_DESC="tissot-user 7.0 NRD90M V8.5.4.0.NCFMIED release-keys"
 
 # Unofficial build ID
 TARGET_UNOFFICIAL_BUILD_ID := ghpranav
