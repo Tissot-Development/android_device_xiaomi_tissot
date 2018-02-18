@@ -37,6 +37,15 @@ TARGET_SCREEN_WIDTH := 1080
 # Update engine
 PRODUCT_PACKAGES += brillo_update_payload
 
+# Enable update engine sideloading by including the static version of the
+# boot_control HAL and its dependencies.
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.msm8996 \
+    libgptutils \
+    libsparse
+PRODUCT_PACKAGES += \
+    update_engine_sideload
+    
 # Permissions
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
