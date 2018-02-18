@@ -40,7 +40,7 @@ PRODUCT_PACKAGES += brillo_update_payload
 # Enable update engine sideloading by including the static version of the
 # boot_control HAL and its dependencies.
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.msm8996 \
+    bootctrl.msm8953 \
     libgptutils \
     libz
 PRODUCT_PACKAGES += \
