@@ -38,16 +38,19 @@ PRODUCT_PACKAGES += \
     update_engine_sideload \
     update_verifier
 
+# The following modules are included in debuggable builds only.
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl \
+    update_engine_client
+
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    bootctrl.msm8953
+    bootctrl.qcom
 
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.msm8953 \
+    bootctrl.qcom \
     libgptutils \
     libz
-PRODUCT_PACKAGES += \
-    update_engine_sideload
     
 PRODUCT_NAME := lineage_tissot
 BOARD_VENDOR := Xiaomi
