@@ -200,9 +200,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/vendor/etc/xtwifi.conf
 
 # Health HAL
-PRODUCT_PACKAGES += \
-    android.hardware.health@1.0-impl \
-    android.hardware.health@1.0-service 
+#PRODUCT_PACKAGES += \
+#    android.hardware.health@1.0-impl \
+#    android.hardware.health@1.0-service 
 
 # Input
 PRODUCT_COPY_FILES += \
