@@ -1,3 +1,4 @@
+<manifest version="1.0" type="device">
 <!--
     This is a skeleton device manifest. Notes:
     1. android.hidl.*, android.frameworks.*, android.system.* are not 
@@ -8,7 +9,7 @@ included.
        <interface> declared; users will have to write them by hand.
     4. sepolicy version is set to 0.0. It is recommended that the entry
        is removed from the manifest file and written by assemble_vintf
-       at build time. --> <manifest version="1.0" type="device">
+       at build time. --> 
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport arch="32+64">passthrough</transport>
