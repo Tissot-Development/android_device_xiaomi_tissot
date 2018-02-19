@@ -1,2 +1,0 @@
-allow init oemfs:dir mounton;
-

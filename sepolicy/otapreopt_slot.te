@@ -1,2 +1,0 @@
-allow otapreopt_slot system_file:lnk_file getattr;
-

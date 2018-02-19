@@ -1,3 +1,0 @@
-allow recovery_persist system_file:lnk_file getattr;
-allow recovery_refresh system_file:lnk_file getattr;
-

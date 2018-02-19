@@ -1,2 +1,0 @@
-allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
-allow adsprpcd_file adsprpcd_file:filesystem associate;
