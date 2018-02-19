@@ -1,0 +1,1 @@
+type rootfs, fs_type, contextmount_type;
