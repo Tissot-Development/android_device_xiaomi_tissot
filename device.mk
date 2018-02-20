@@ -136,8 +136,8 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    consumerir.msm8953
 
-PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-impl
+#PRODUCT_PACKAGES += \
+#    android.hardware.ir@1.0-impl
 
 # Display
 PRODUCT_PACKAGES += \
