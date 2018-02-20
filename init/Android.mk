@@ -23,6 +23,8 @@ LOCAL_C_INCLUDES := system/core/init
 LOCAL_MODULE := libinit_tissot
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := init_tissot.cpp
-LOCAL_STATIC_LIBRARIES := libbase
+LOCAL_STATIC_LIBRARIES := \
+      libbase \
+      libselinux
 
 include $(BUILD_STATIC_LIBRARY)
