@@ -145,6 +145,7 @@ PRODUCT_PACKAGES += \
     gralloc.msm8953 \
     hwcomposer.msm8953 \
     memtrack.msm8953 \
+    libdisplayconfig \
     liboverlay \
     libgenlock \
     libjni_livedisplay \
@@ -202,7 +203,13 @@ PRODUCT_COPY_FILES += \
 # Health HAL
 #PRODUCT_PACKAGES += \
 #    android.hardware.health@1.0-impl \
-#    android.hardware.health@1.0-service 
+#    android.hardware.health@1.0-convert \
+#    android.hardware.health@1.0-service \
+#    android.hardware.health@1.0
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.manager@1.0-java
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -282,6 +289,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
     init.qcom.sh \
+    init.qcom.sensors.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
     init.target.rc \
@@ -330,7 +338,12 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
+
+# VNDK-SP:
+PRODUCT_PACKAGES += \
+    vndk-sp
 
 # Whitelisted app
 PRODUCT_COPY_FILES += \
@@ -358,3 +371,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
+
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0
+    
