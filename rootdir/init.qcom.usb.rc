@@ -95,7 +95,7 @@ service qcom-usb-sh /vendor/bin/init.qcom.usb.sh
     class core
     user root
     oneshot
-    disabled
+#    disabled
 
 # Following are the parameters required for usb functionality. They provide configurable options like
 # product_id/vendor id and allows specifying required functions:
