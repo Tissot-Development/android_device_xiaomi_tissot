@@ -135,11 +135,11 @@ PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service
 
 # Consumerir
-#PRODUCT_PACKAGES += \
-#    consumerir.msm8953
+PRODUCT_PACKAGES += \
+    consumerir.msm8953
 
-#PRODUCT_PACKAGES += \
-#    android.hardware.ir@1.0-impl
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-impl
 
 # Display
 PRODUCT_PACKAGES += \
