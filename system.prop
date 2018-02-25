@@ -343,8 +343,11 @@ persist.device.type=omt
 persist.activate_mbn.enabled=false
 ro.regionalization.support=true
 
+# Property to enable display default color mode
+vendor.display.enable_default_color_mode=1
+
  #ADB
 ro.debuggable=1
- persist.sys.usb.config=adb
+persist.sys.usb.config=adb
 ro.secure=0
 ro.adb.secure=0
