@@ -137,9 +137,6 @@ PRODUCT_PACKAGES += \
 
 # Consumerir
 PRODUCT_PACKAGES += \
-    consumerir.msm8953
-
-PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl
 
 # Display
