@@ -317,9 +317,6 @@ on post-fs-data
     #Create directory for hostapd
     mkdir /data/hostapd 0770 system wifi
 
-    # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
-
     mkdir /data/vendor/audio/ 0770 media audio
 
     # Create a folder for audio delta files
@@ -676,7 +673,3 @@ on property:init.svc.surfaceflinger=restarting
     stop hwcomposer-2-1
     start hwcomposer-2-1
 
-service time_daemon /system/vendor/bin/time_daemon
-    class main
-    user root
-    group root
