@@ -673,3 +673,18 @@ on property:init.svc.surfaceflinger=restarting
     stop hwcomposer-2-1
     start hwcomposer-2-1
 
+service goodixfpd /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+     class late_start
+     user root
+     seclabel u:r:goodixfpd:s0
+     group system sdcard_rw
+ 
+ on property:sys.fp.goodix=0
+    stop goodixfpd
+ 
+ on property:sys.fp.vendor=goodix
+    setprop ro.boot.fpsensor goodix
+    start goodixfpd
+ 
+ on property:sys.fp.vendor=FPC
+    setprop ro.boot.fpsensor fpc
