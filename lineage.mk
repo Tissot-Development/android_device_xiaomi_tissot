@@ -61,5 +61,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT="xiaomi/tissot/tissot:7.0/NRD90M/V8.5.4.0.NCFMIED:user/release-keys" \
     PRIVATE_BUILD_DESC="tissot-user 7.0 NRD90M V8.5.4.0.NCFMIED release-keys"
 
-# Unofficial build ID
-TARGET_UNOFFICIAL_BUILD_ID := ghpranav
