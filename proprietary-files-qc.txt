@@ -24,7 +24,8 @@ vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
 # Audio
-lib/libqct_resampler.so
+vendor/lib64/libfastcvopt.so
+vendor/lib64/libmdsprpc.so
 vendor/etc/drc/drc_cfg_5.1.txt
 vendor/etc/drc/drc_cfg_AZ.txt
 vendor/etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
@@ -52,6 +53,26 @@ vendor/lib64/libaudioalsa.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
+
+
+# Audio libraries
+etc/permissions/audiosphere.xml
+framework/audiosphere.jar
+lib/hw/audio.primary.msm8953.so
+lib/libDiracAPI_SHARED.so
+lib/soundfx/libdirac.so
+lib64/hw/audio.primary.msm8953.so
+vendor/bin/audioflacapp
+vendor/etc/diracmobile.config
+vendor/lib/libhwdaphal.so
+vendor/lib/libqtigef.so
+vendor/lib/soundfx/libasphere.so
+vendor/lib/soundfx/libdirac.so
+vendor/lib/soundfx/libshoebox.so
+vendor/lib64/libqtigef.so
+vendor/lib64/soundfx/libasphere.so
+vendor/lib64/libhwdaphal.so
+vendor/lib64/soundfx/libshoebox.so
 
 # Bluetooth
 vendor/bin/btnvtool
@@ -257,9 +278,12 @@ vendor/lib/hw/keystore.msm8953.so
 vendor/lib64/hw/keystore.msm8953.so
 
 # Listen
+vendor/lib64/hw/sound_trigger.primary.msm8953.so
+vendor/lib64/vendor.qti.voiceprint@1.0.so
 vendor/lib/hw/sound_trigger.primary.msm8953.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
+vendor/lib/vendor.qti.voiceprint@1.0.so
 
 # Media
 vendor/lib/libI420colorconvert.so
@@ -294,6 +318,13 @@ vendor/lib64/libOmxWmaDec.so
 -vendor/lib64/libgpustats.so
 vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libvpplibrary.so
+vendor/etc/perf/perfboostsconfig.xml
+vendor/lib/libqti-perfd.so
+vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
+vendor/lib64/hw/vendor.qti.hardware.iop@1.0-impl.so
+vendor/lib64/libfeedbackhandler.so
+vendor/lib64/libqti-perfd.so
 
 # Modem
 vendor/lib/libwms.so
