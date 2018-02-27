@@ -58,20 +58,18 @@ vendor/lib64/soundfx/libqcvirt.so
 # Audio libraries
 etc/permissions/audiosphere.xml
 framework/audiosphere.jar
-lib/hw/audio.primary.msm8953.so
-lib/libDiracAPI_SHARED.so
-lib/soundfx/libdirac.so
-lib64/hw/audio.primary.msm8953.so
+vendor/lib/hw/audio.primary.msm8953.so
+vendor/lib/libDiracAPI_SHARED.so
+vendor/lib/soundfx/libdirac.so
+vendor/lib64/hw/audio.primary.msm8953.so
 vendor/bin/audioflacapp
 vendor/etc/diracmobile.config
-vendor/lib/libhwdaphal.so
 vendor/lib/libqtigef.so
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libdirac.so
 vendor/lib/soundfx/libshoebox.so
 vendor/lib64/libqtigef.so
 vendor/lib64/soundfx/libasphere.so
-vendor/lib64/libhwdaphal.so
 vendor/lib64/soundfx/libshoebox.so
 
 # Bluetooth
@@ -157,6 +155,40 @@ vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so
+
+# DSP
+vendor/lib/libsdsprpc.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
+vendor/lib64/libsdsprpc.so
+
+# DSP - SCVE
+vendor/lib/libscveBlobDescriptor.so
+vendor/lib/libscveBlobDescriptor_stub.so
+vendor/lib/libscveCommon.so
+vendor/lib/libscveCommon_stub.so
+vendor/lib/libscveImageCorrection.so
+vendor/lib/libscveObjectSegmentation.so
+vendor/lib/libscveObjectTracker.so
+vendor/lib/libscveObjectTracker_stub.so
+vendor/lib/libscvePanorama_lite.so
+vendor/lib/libscvePanorama.so
+vendor/lib64/libscveBlobDescriptor.so
+vendor/lib64/libscveBlobDescriptor_stub.so
+vendor/lib64/libscveCommon.so
+vendor/lib64/libscveCommon_stub.so
+vendor/lib64/libscveImageCorrection.so
+vendor/lib64/libscveObjectSegmentation.so
+vendor/lib64/libscveObjectTracker.so
+vendor/lib64/libscveObjectTracker_stub.so
+vendor/lib64/libscvePanorama_lite.so
+vendor/lib64/libscvePanorama.so
 
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8953.so
