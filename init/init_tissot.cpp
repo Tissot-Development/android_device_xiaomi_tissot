@@ -34,6 +34,8 @@
 #include "log.h"
 #include "util.h"
 
+using android::init::property_set;
+
 char const *heapstartsize;
 char const *heapgrowthlimit;
 char const *heapsize;
