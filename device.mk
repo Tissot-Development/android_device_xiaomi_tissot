@@ -382,7 +382,8 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf \
     wificond \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    libcurl
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service
