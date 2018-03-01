@@ -727,4 +727,4 @@ vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti_performance.so
 
 # Wi-Fi
-bin/wcnss_service
+vendor/bin/wcnss_service
