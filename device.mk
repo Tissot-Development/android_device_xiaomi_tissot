@@ -378,13 +378,16 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
+    hostapd_cli \
     dhcpcd.conf \
     wificond \
+    libwifi-hal-qcom \
     wpa_supplicant \
     wpa_supplicant.conf \
     libcurl
 
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0 \
     android.hardware.wifi@1.0-service
 
 PRODUCT_COPY_FILES += \
