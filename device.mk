@@ -380,7 +380,6 @@ PRODUCT_PACKAGES += \
     hostapd \
     hostapd_cli \
     dhcpcd.conf \
-    wificond \
     libwifi-hal-qcom \
     wpa_supplicant \
     wpa_supplicant.conf \
