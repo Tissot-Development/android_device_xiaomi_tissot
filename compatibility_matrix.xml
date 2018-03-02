@@ -295,19 +295,11 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.wifi</name>
+    <hal format="hidl" optional="false">
+        <name>android.system.wifi.keystore</name>
         <version>1.0</version>
         <interface>
-            <name>IWifi</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.wifi.supplicant</name>
-        <version>1.0</version>
-        <interface>
-            <name>ISupplicant</name>
+            <name>IKeystore</name>
             <instance>default</instance>
         </interface>
     </hal>
