@@ -221,7 +221,7 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # Shims
-TARGET_LD_SHIM_LIBS := /system/lib/libMiCameraHal.so|libMiCameraHal_shim.so
+TARGET_LD_SHIM_LIBS := /system/lib/libskia.so|libshims_skia.so
 
 # Wi-Fi
 BOARD_HAS_QCOM_WLAN := true
