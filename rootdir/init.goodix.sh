@@ -1,5 +1,6 @@
-#!/vendor/bin/sh
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+#! /vendor/bin/sh
+
+# Copyright (c) 2009-2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,23 +27,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-#
-# Function to start sensors for SSC enabled platforms
-#
-start_sensors()
-{
-    if [ -c /dev/msm_dsps -o -c /dev/sensors ]; then
-        chmod -h 775 /persist/sensors
-        chmod -h 664 /persist/sensors/sensors_settings
-        mkdir -p /persist/sensors/registry/registry
-        chown -h system.root /persist/sensors/sensors_settings
-        start sensors
-    fi
-}
-
-start_sensors
-
-service goodix_script /vendor/bin/init.goodix.sh
-    class late_start
-    user root
-    oneshot
+if [ ! -f /data/system/users/0/settings_fingerprint.xml ]; then
+    rm -rf /persist/data/finger_*
+fi
