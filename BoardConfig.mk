@@ -172,7 +172,7 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_tissot
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
-#Lights
+# Lights
 TARGET_PROVIDES_LIBLIGHT:= true
 
 # Lineage Hardware
@@ -224,7 +224,7 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # Shims
-TARGET_LD_SHIM_LIBS := /system/lib/libskia.so|libshims_skia.so
+TARGET_LD_SHIM_LIBS := /system/lib/libMiCameraHal.so|libshims_skia.so
 
 # Wi-Fi
 BOARD_HAS_QCOM_WLAN := true
