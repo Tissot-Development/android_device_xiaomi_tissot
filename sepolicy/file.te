@@ -13,3 +13,5 @@ type debugfs_rmt, debugfs_type, fs_type;
 # Touchscreen
 type proc_touchpanel, fs_type, sysfs_type;
 
+# kcal
+type sysfs_kcal, fs_type, sysfs_type;
