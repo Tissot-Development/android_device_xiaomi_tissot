@@ -197,7 +197,7 @@ service imsdatadaemon /system/vendor/bin/imsdatadaemon
 service hvdcp_opti /system/bin/hvdcp_opti
     class main
     user root
-    group root
+    group system wakelock
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
