@@ -318,6 +318,10 @@ on post-fs-data
 
     mkdir /data/vendor/audio/ 0770 media audio
 
+    # Create /data/vendor/time folder for time-services
+    mkdir /data/time/ 0700 system system
+    mkdir /data/vendor/time/ 0700 system system
+
     # Create a folder for audio delta files
     mkdir /data/vendor/audio/acdbdata 0770 media audio
     mkdir /data/vendor/audio/acdbdata/delta 0770 media audio
@@ -674,3 +678,9 @@ service goodixfpd vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-serv
     setprop ro.boot.fpsensor gdx
     setprop ro.hardware.fingerprint goodix
     start fps_hal
+
+service time_daemon /system/vendor/bin/time_daemon
+    class main
+    user root
+    group root
+    writepid /dev/cpuset/system-background/tasks
