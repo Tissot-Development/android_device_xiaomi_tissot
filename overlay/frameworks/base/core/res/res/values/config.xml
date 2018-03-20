@@ -402,4 +402,6 @@
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>     
 
+   <!-- Enable system navigation keys. -->
+   <bool name="config_supportSystemNavigationKeys">true</bool>
 </resources>
