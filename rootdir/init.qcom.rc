@@ -185,10 +185,7 @@ on boot
 
     # Create directory used for display
     mkdir /persist/display 0770 system graphics
-
-    # Create vpp directory
-    mkdir /persist/vpp 0770 media media
-
+    
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
@@ -220,9 +217,6 @@ on post-fs-data
 
     # Create directory for apps access via QTEEConnector
     mkdir /data/vendor/qtee 0770 system system
-
-    # Create directory for voiceprint
-    mkdir /data/misc/qvop 0771 system system
 
     #Create folder for mm-qcamera-daemon
     mkdir /data/misc/camera 0770 camera camera
@@ -382,9 +376,6 @@ on post-fs-data
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
 
-    # Create vpp directory
-    mkdir /data/vendor/vpp 0770 media media
-
     #Create FTM_AP dir for factory test
     mkdir /data/FTM_AP 0775 system system
 
@@ -498,13 +489,6 @@ service port-bridge /system/vendor/bin/port-bridge
     disabled
     oneshot
 
-# QMUX must be in multiple groups to support external process connections
-service qmuxd /system/vendor/bin/qmuxd
-    class main
-    user root
-    group radio audio bluetooth gps nfc diag
-    disabled
-
 service netmgrd /system/vendor/bin/netmgrd
     class main
     disabled
@@ -514,12 +498,6 @@ service ipacm-diag /system/vendor/bin/ipacm-diag
     user radio
     socket ipacm_log_file dgram 660 radio radio
     group radio diag oem_2901
-    disabled
-
-service ipacm /system/vendor/bin/ipacm
-    class main
-    user radio
-    group radio inet
     disabled
 
 service qti /system/vendor/bin/qti
@@ -601,11 +579,6 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
 on property:sys.boot_completed=1
     start qcom-post-boot
 
-service qvop-daemon /vendor/bin/qvop-daemon
-    class late_start
-    user system
-    group system drmrpc
-
 service atfwd /vendor/bin/ATFWD-daemon
     class late_start
     user system
@@ -681,11 +654,6 @@ on property:init.svc.surfaceflinger=restarting
     stop hwcomposer-2-1
     start hwcomposer-2-1
 
-service vppservice /vendor/bin/vppservice
-    class main
-    user media
-    group camera
-
 service goodixfpd vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
       class core
       user root
@@ -706,11 +674,3 @@ service goodixfpd vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-serv
     setprop ro.boot.fpsensor gdx
     setprop ro.hardware.fingerprint goodix
     start fps_hal
-
-service camera-provider-2-4 /vendor/bin/hw/android.hardware.camera.provider@2.4-service
-    class hal
-    user cameraserver
-    group audio camera input drmrpc
-    ioprio rt 4
-    capabilities SYS_NICE
-    writepid /dev/cpuset/camera-daemon/tasks /dev/stune/foreground/tasks
