@@ -1,6 +1,17 @@
 [
- {
-   "repository": "android_device_qcom_common",
-   "target_path": "device/qcom/common"
- },
+  {
+   "repository": "LineageOS/android_device_qcom_common",
+   "target_path": "device/qcom/common",
+   "branch"     : "lineage-15.1"
+  },
+  {
+    "repository" : "Tissot-Development/android_kernel_xiaomi_tissot",
+    "target_path": "kernel/xiaomi/msm8953",
+    "branch"     : "8.1"
+  },
+  {
+    "repository" : "Tissot-Development/android_vendor_xiaomi_tissot",
+    "target_path": "vendor/xiaomi/tissot",
+    "branch"     : "8.1"
+  }
 ]
