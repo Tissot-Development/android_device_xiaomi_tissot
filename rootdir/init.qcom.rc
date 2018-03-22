@@ -194,18 +194,6 @@ on boot
     # Create directory used for display
     mkdir /persist/display 0770 system graphics
     
-    # Screen off Gestures
-       chown system radio /sys/android_touch/doubletap2wake
-       chmod 0660 /sys/android_touch/doubletap2wake
-       chown system radio /sys/android_touch/gesture_swipe_right
-       chmod 0660 /sys/android_touch/gesture_swipe_right
-       chown system radio /sys/android_touch/gesture_swipe_left
-       chmod 0660 /sys/android_touch/gesture_swipe_left
-       chown system radio /sys/android_touch/gesture_swipe_down
-       chmod 0660 /sys/android_touch/gesture_swipe_down
-       chown system radio /sys/android_touch/gesture_swipe_up
-       chmod 0660 /sys/android_touch/gesture_swipe_up
-    
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
