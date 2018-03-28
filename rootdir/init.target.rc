@@ -166,16 +166,6 @@ service wcnss-service /system/vendor/bin/wcnss_service
     group system wifi radio
     oneshot
 
-on charger
-    wait /dev/block/bootdevice/by-name/system
-    mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-    load_all_props
-    setprop sys.usb.configfs 0
-    setprop persist.sys.usb.config mass_storage
-    start qcom-post-boot
-    setprop persist.sys.usb.config mass_storage
-    start hvdcp_opti
-
 service imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main
     user system
@@ -193,6 +183,17 @@ service hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
+
+on charger
+    wait /dev/block/bootdevice/by-name/system
+    mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
+    load_all_props
+    setprop sys.usb.configfs 0
+    setprop persist.sys.usb.config mass_storage
+    start qcom-post-boot
+    setprop persist.sys.usb.config mass_storage
+    start hvdcp_opti
+    start thermal-engine
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
