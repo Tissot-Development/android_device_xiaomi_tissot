@@ -692,3 +692,8 @@ service time_daemon /system/vendor/bin/time_daemon
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
+
+service goodix_script /vendor/bin/init.goodix.sh
+    class late_start
+    user root
+    oneshot

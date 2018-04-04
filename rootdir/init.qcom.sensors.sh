@@ -41,8 +41,3 @@ start_sensors()
 }
 
 start_sensors
-
-service goodix_script /vendor/bin/init.goodix.sh
-    class late_start
-    user root
-    oneshot
