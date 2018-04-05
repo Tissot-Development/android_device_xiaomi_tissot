@@ -80,6 +80,12 @@ BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BLUETOOTH_HCI_USE_MCT := true
+
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
@@ -87,16 +93,6 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 TARGET_NO_BOOTLOADER := true
-
-# Bootanimation
-TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
-
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_QCOM := true
-BLUETOOTH_HCI_USE_MCT := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -150,16 +146,16 @@ TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/enable_dt2w"
 # Enable real time lockscreen charging current values
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 
-#FM
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
+# FM
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := true
 USE_DEVICE_SPECIFIC_GPS := true
-
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
@@ -214,18 +210,18 @@ TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USE_SDCLANG := true
 
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery/fstab.qcom
+
 # RIL
 TARGET_RIL_VARIANT := caf
 
-# Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery/fstab.qcom
+# Root
+BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
-
-# Root
-BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # Shims
 TARGET_LD_SHIM_LIBS := /system/lib/libMiCameraHal.so|libshims_skia.so
