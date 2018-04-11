@@ -187,7 +187,7 @@ service hvdcp_opti /system/vendor/bin/hvdcp_opti
 service readmac /system/vendor/bin/readmac
     class main
     user root
-    group root
+    group oem_2950_bluetooth
     oneshot
 
 on charger
