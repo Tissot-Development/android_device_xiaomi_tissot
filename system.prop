@@ -179,9 +179,3 @@ wifi.interface=wlan0
 
 # Property to enable display default color mode
 vendor.display.enable_default_color_mode=1
-
- #ADB
-ro.debuggable=1
-persist.sys.usb.config=adb
-ro.secure=0
-ro.adb.secure=0
