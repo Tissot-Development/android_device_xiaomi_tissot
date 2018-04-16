@@ -1,0 +1,1 @@
+genfscon debugfs /rmt_storage u:object_r:debugfs_rmts:s0

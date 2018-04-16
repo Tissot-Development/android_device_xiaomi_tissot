@@ -1,1 +1,34 @@
-/dsp              u:object_r:rootfs:s0
+# Fpc Fingerprint
+/data/fpc(/.*)?					u:object_r:fpc_data_file:s0
+
+# Peel Ir
+/dev/peel_ir                                    u:object_r:peel_ir_device:s0
+
+# Goodix Fingerprint
+/dev/goodix_fp*					u:object_r:goodix_fpd_device:s0
+
+# Block devices
+/dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
+
+/dsp                                            u:object_r:rootfs:s0
+
+# Data files
+/data/misc/goodix(/.*)?                         u:object_r:goodix_data_file:s0
+/data/misc/netmgr(/.*)?                         u:object_r:netmgr_data_file:s0
+/data/decrypt\.txt                              u:object_r:thermal_data_file:s0
+/data/thermal(/.*)?                             u:object_r:thermal_dump_file:s0
+/data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
+
+# Sys files
+/sys/devices/soc/78b6000\.i2c/i2c-9/9-[0-9a-f]+/leds(/.*)?    u:object_r:sysfs_leds:s0
+/sys/devices/soc/leds-qpnp-[0-9]+/leds(/.*)?                  u:object_r:sysfs_leds:s0
+
+/sys/kernel/debug/msm_core(/.*)?                 u:object_r:debugfs_msm_core:s0
+/sys/kernel/debug/rmt_storage/rmts               u:object_r:debugfs_rmts:s0
+
+# Persist
+/persist/fpc(/.*)?                               u:object_r:fpc_persist_file:s0
+/persist/rfs/msm/mpss/server_check.txt           u:object_r:tftp_server_check_file:s0
+
+# HALs
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service.xiaomi_tissot    u:object_r:hal_light_default_exec:s0

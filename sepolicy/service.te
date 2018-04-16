@@ -1,0 +1,2 @@
+type sms_secure_service, service_manager_type;
+type goodix_fpd_service, service_manager_type;

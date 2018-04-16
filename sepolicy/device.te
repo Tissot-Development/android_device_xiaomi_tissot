@@ -1,0 +1,3 @@
+type peel_ir_device, dev_type;
+type sound_device, dev_type;
+type sysmatdrv_device, dev_type;

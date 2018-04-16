@@ -1,0 +1,18 @@
+type init-goodix-sh, domain;
+type init-goodix-sh_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(init-goodix-sh)
+
+allow init-goodix-sh vendor_shell_exec:file rx_file_perms;
+allow init-goodix-sh vendor_toolbox_exec:file rx_file_perms;
+
+# execute grep
+allow init-goodix-sh vendor_file:file rx_file_perms;
+
+# set the system property
+set_prop(init-goodix-sh, system_prop)
+
+# allow goodix
+allow init-goodix-sh self:capability sys_module;
+allow init-goodix-sh system_file:system module_load;
+allow init-goodix-sh vendor_file:system module_load;
