@@ -6,6 +6,12 @@ r_dir_file(hal_fingerprint_default, firmware_file)
 
 allow hal_fingerprint_default iqfp_service:service_manager find;
 
+allow hal_fingerprint_default device:chr_file ioctl;
+allow hal_fingerprint_default sdcardfs:dir search;
+allow hal_fingerprint_default media_rw_data_file:dir { search read open };
+allow hal_fingerprint_default media_rw_data_file:file { create write open read getattr };
+allow hal_fingerprint_default mnt_user_file:lnk_file read;
+allow hal_fingerprint_default mnt_user_file:dir search;
 allow hal_fingerprint_default fpc_data_file:dir rw_dir_perms;
 allow hal_fingerprint_default fpc_data_file:file create_file_perms;
 allow hal_fingerprint_default fpc_data_file:sock_file { create unlink };
@@ -15,7 +21,8 @@ allow hal_fingerprint_default sysfs_fpc:dir r_dir_perms;
 allow hal_fingerprint_default sysfs:file rw_file_perms;
 allow hal_fingerprint_default sysmatdrv_device:chr_file w_file_perms;
 allow hal_fingerprint_default system_prop:property_service { set };
-allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
+allow hal_fingerprint_default system_data_file:file { getattr open read };
+allow hal_fingerprint_default tee_device:chr_file { ioctl open read write };
 allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
 allow hal_fingerprint_default property_socket:sock_file rw_file_perms;
 
