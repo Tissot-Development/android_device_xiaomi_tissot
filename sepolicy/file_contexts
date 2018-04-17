@@ -5,7 +5,7 @@
 /dev/goodix_fp		 			u:object_r:fingerprint_device:s0
 
 # Block devices
-/dev/block/bootdevice/by-name/persist		u:object_r:persist_block_device:s0
+/dev/block/mmcblk0p27		u:object_r:persist_block_device:s0
 
 /dsp                                            u:object_r:rootfs:s0
 

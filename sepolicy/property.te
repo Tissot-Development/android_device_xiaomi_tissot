@@ -1,2 +1,2 @@
 type fingerprint_status_prop, property_type;
-type system_panel_prop, property_type;
+type sensors_panel_prop, property_type;

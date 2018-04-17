@@ -1,6 +1,5 @@
 r_dir_file(mm-qcamerad, dsp_file)
 
-allow mm-qcamerad default_prop:property_service set;
 allow mm-qcamerad sysfs:file { r_file_perms };
 
 unix_socket_connect(mm-qcamerad, mpctl, perfd)
