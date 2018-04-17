@@ -31,7 +31,7 @@
 /(vendor|system/vendor)/bin/init\.panel_info\.sh              u:object_r:qti_init_shell_exec:s0
 /persist/PRSensorData\.txt                                    u:object_r:sensors_persist_file:s0
 
-# Light HAL
+# Light HAL)
 /sys/devices/soc/78b6000\.i2c/i2c-2/2-0045/leds(/.*)?    u:object_r:sysfs_leds:s0
 /sys/class/leds(/.*)?                                                       u:object_r:sysfs_leds:s0
-/sys/devices/soc/leds-qpnp-10/leds(/.*)?                  u:object_r:sysfs_leds:s0
+/sys/devices/soc/leds-qpnp-10/leds/button-backlight/brightness                  u:object_r:sysfs_leds:s0
