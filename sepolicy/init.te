@@ -1,8 +1,6 @@
 allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
 allow init debugfs:file write;
 
-allow init goodix_fpd_device:chr_file setattr;
-
 allow init kernel:system syslog_read;
 
 allow init tee_device:chr_file { write ioctl };
