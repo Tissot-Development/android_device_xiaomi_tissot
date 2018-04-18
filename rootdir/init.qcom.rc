@@ -697,3 +697,13 @@ service goodix_script /vendor/bin/init.goodix.sh
     class late_start
     user root
     oneshot
+
+on property:vold.decrypt=trigger_restart_framework
+     start config_bt_addr
+     start config_bluetooth
+     
+service config_bt_addr /system/vendor/bin/btnvtool -O
+    class core
+    user bluetooth
+    group bluetooth radio
+    oneshot
