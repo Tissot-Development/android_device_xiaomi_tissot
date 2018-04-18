@@ -189,12 +189,6 @@ service hvdcp_opti /system/vendor/bin/hvdcp_opti
     user root
     group system wakelock
 
-service readmac /system/vendor/bin/readmac
-    class main
-    user root
-    group oem_2950_bluetooth
-    oneshot
-
 on charger
     load_all_props
     setprop sys.usb.configfs 0

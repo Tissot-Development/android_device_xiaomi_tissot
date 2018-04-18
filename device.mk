@@ -425,7 +425,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
     hostapd_cli \
-    readmac \
     dhcpcd.conf \
     libwifi-hal-qcom \
     wpa_supplicant \
