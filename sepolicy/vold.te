@@ -1,0 +1,2 @@
+allow vold proc_touchpanel:dir { read open search };
+allow vold persist_file:dir { read search open ioctl };

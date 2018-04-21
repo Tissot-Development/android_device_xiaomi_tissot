@@ -1,3 +1,0 @@
-allow platform_app qemu_hw_mainkeys_prop:file { getattr open };
-allow platform_app qemu_hw_mainkeys_prop:file read;
-get_prop(platform_app, qemu_hw_mainkeys_prop)

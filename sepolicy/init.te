@@ -1,6 +1,0 @@
-allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
-allow init debugfs:file write;
-
-allow init kernel:system syslog_read;
-
-allow init tee_device:chr_file { write ioctl };
