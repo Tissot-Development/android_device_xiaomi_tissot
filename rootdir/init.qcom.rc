@@ -391,6 +391,43 @@ on post-fs-data
     #Create FTM_AP dir for factory test
     mkdir /data/FTM_AP 0775 system system
 
+on init
+    # Create Tissot Power HAL tunables
+    mkdir /dev/power 0555 system system
+
+on boot
+    # Set Tissot Power HAL tunables
+    write /dev/power/enable_interaction_boost   1
+    write /dev/power/fling_min_boost_duration   200
+    write /dev/power/fling_max_boost_duration   2500
+    write /dev/power/fling_boost_topapp         10
+    write /dev/power/fling_min_freq_big         1113
+    write /dev/power/fling_min_freq_little      1113
+    write /dev/power/touch_boost_duration       200
+    write /dev/power/touch_boost_topapp         5
+    write /dev/power/touch_min_freq_big         1036
+    write /dev/power/touch_min_freq_little      1036
+    chmod 0644 /dev/power/enable_interaction_boost
+    chmod 0644 /dev/power/fling_min_boost_duration
+    chmod 0644 /dev/power/fling_max_boost_duration
+    chmod 0644 /dev/power/fling_boost_topapp      
+    chmod 0644 /dev/power/fling_min_freq_big      
+    chmod 0644 /dev/power/fling_min_freq_little   
+    chmod 0644 /dev/power/touch_boost_duration    
+    chmod 0644 /dev/power/touch_boost_topapp      
+    chmod 0644 /dev/power/touch_min_freq_big      
+    chmod 0644 /dev/power/touch_min_freq_little   
+    chown system system /dev/power/enable_interaction_boost
+    chown system system /dev/power/fling_min_boost_duration
+    chown system system /dev/power/fling_max_boost_duration
+    chown system system /dev/power/fling_boost_topapp      
+    chown system system /dev/power/fling_min_freq_big      
+    chown system system /dev/power/fling_min_freq_little   
+    chown system system /dev/power/touch_boost_duration    
+    chown system system /dev/power/touch_boost_topapp      
+    chown system system /dev/power/touch_min_freq_big      
+    chown system system /dev/power/touch_min_freq_little
+    
 on property:hw.fm.init=*
     write /sys/module/radio_iris_transport/parameters/fmsmd_set ${hw.fm.init}
 

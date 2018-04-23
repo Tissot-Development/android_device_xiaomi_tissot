@@ -324,8 +324,9 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
+    power.tissot \
     android.hardware.power@1.1-impl \
-    android.hardware.power@1.1-service-qti
+    android.hardware.power@1.1-service.tissot
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
