@@ -665,12 +665,6 @@ on charger
 on property:init.svc.surfaceflinger=restarting
     stop hwcomposer-2-1
     start hwcomposer-2-1
-
-service goodixfpd vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
-      class core
-      user root
-      group system system
-      writepid /dev/cpuset/system-background/tasks
  
  on property:sys.fp.vendor=switchf
      stop goodixfpd
