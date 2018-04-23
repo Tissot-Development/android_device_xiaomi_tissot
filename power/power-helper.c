@@ -445,10 +445,8 @@ void power_hint(power_hint_t hint, void *data)
                 clock_gettime(CLOCK_MONOTONIC, &cur_boost_timespec);
                 long long elapsed_time = calc_timespan_us(s_previous_boost_timespec, cur_boost_timespec);
                 // don't hint if previous hint's duration covers this hint's duration
-                if ((s_previous_duration * 1000) > (elapsed_time + boost_duration * 1000)) {
-                    pthread_mutex_unlock(&s_interaction_lock);
+                if ((s_previous_duration * 1000) > (elapsed_time + boost_duration * 1000))
                     return;
-                }
                 s_previous_boost_timespec = cur_boost_timespec;
                 s_previous_duration = boost_duration;
 

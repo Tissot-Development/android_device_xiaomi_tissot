@@ -94,7 +94,6 @@ static int process_cam_preview_hint(void *metadata)
             sizeof(resource_values) / sizeof(resource_values[0]));
         ALOGI("Cam Preview hint start");
         return HINT_HANDLED;
-        }
     } else if (cam_preview_metadata.state == 0) {
         undo_hint_action(cam_preview_metadata.hint_id);
         ALOGI("Cam Preview hint stop");
@@ -154,17 +153,16 @@ static int process_video_encode_hint(void *metadata)
         int resource_values[] = {0x41810000, 0x9C4, 0x41814000, 0x32,
                                  0x4180C000, 0x0,   0x41820000, 0xA};
 
-            perform_hint_action(video_encode_metadata.hint_id,
+            perform_hint_action(DEFAULT_VIDEO_ENCODE_HINT_ID,
                 resource_values, sizeof(resource_values)/sizeof(resource_values[0]));
         ALOGI("Video Encode hint start");
         return HINT_HANDLED;
     } else {
         // boost handle is intentionally not released, release_request(boost_handle);
-        undo_hint_action(video_encode_metadata.hint_id);
+        undo_hint_action(DEFAULT_VIDEO_ENCODE_HINT_ID);
         ALOGI("Video Encode hint stop");
         return HINT_HANDLED;
         }
-    }
     return HINT_NONE;
 }
 
