@@ -53,6 +53,7 @@ persist.camera.gyro.disable=0
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
 persist.camera.HAL3.enabled=1
+persist.camera.eis.enable=1
 
 # Cne/Dpm
 persist.cne.feature=1
