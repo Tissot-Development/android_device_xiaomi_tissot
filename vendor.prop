@@ -55,6 +55,7 @@ vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.line
 vendor.camera.aux.packagelist2=com.google.android.GoogleCameraWide
 persist.camera.HAL3.enabled=1
 persist.camera.eis.enable=1
+persist.camera.is_mode=20
 
 # Cne/Dpm
 persist.cne.feature=1
