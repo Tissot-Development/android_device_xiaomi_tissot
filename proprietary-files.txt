@@ -11,8 +11,7 @@ vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 
 # Camera
 etc/morpho_lowlight4.0.xml
-lib/libMiCameraHal.so|9986f368b9b25a278215ab4a51fe41cec4866450
-lib/libmisk.so|1511ea2f77450d9b43221e1cf1445735ff476266
+lib/libMiCameraHal.so
 lib/libdualcameraddm.so
 lib/libjni_dualcamera.so
 lib/libmorpho_groupshot.so
