@@ -1,2 +1,0 @@
-set_prop(rild, debug_prop);
-allow rild vendor_file:file ioctl;

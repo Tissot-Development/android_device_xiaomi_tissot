@@ -1,2 +1,0 @@
-allow hal_power_default sysfs:file { open write };
-allow hal_power_default proc_touchpanel:dir search;
