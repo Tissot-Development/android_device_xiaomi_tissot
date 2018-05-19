@@ -222,7 +222,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.qcom
 TARGET_RIL_VARIANT := caf
 
 # Root
-BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
+BOARD_ROOT_EXTRA_FOLDERS := firmware persist
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk

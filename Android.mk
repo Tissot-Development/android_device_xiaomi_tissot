@@ -26,11 +26,13 @@ $(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware; \
     ln -sf /dev/block/bootdevice/by-name/msadp \
         $(TARGET_OUT_VENDOR)/firmware/msadp)
 
-DSP_SYMLINK := $(TARGET_OUT_VENDOR)/lib/dsp
+# Create symlink at /dev to /vendor/lib/dev (GSI compatibility)
+DSP_SYMLINK := $(TARGET_ROOT_OUT)/dsp
 $(DSP_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating DSP folder symlink: $@"
 	@rm -rf $@
-	$(hide) ln -sf /dsp $@
+	@mkdir -p $(TARGET_OUT_VENDOR)/lib/dsp
+	$(hide) ln -sf /vendor/lib/dsp $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(DSP_SYMLINK)
 
