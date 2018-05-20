@@ -204,6 +204,8 @@ vendor/lib64/vendor.qti.gnss@1.0_vendor.so|249c76153f8de014bf2dd2ab623ee3d87741f
 # Graphics
 lib/libsdm-disp-apis.so:vendor/lib/libsdm-disp-apis.so
 lib64/libsdm-disp-apis.so:vendor/lib64/libsdm-disp-apis.so
+lib/libdisplayconfig.so:vendor/lib/libdisplayconfig.so
+lib64/libdisplayconfig.so:vendor/lib64/libdisplayconfig.so
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
