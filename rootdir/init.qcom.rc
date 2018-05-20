@@ -701,6 +701,9 @@ service config_bt_addr /system/vendor/bin/btnvtool -O
 
 on boot
 
+    #Script for Treble compatibility fixups
+    exec - root -- /vendor/bin/init.treblecompat.sh
+
     # add for goodix
     chown system system /dev/goodix_fp
     chmod 0644 /dev/goodix_fp

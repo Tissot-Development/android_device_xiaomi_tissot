@@ -341,6 +341,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.goodix.sh \
+    init.treblecompat.sh \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.sensors.sh \
