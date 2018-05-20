@@ -10,15 +10,15 @@ vendor/etc/acdbdata/QRD/QRD_adsp_avs_config.acdb
 vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 
 # Camera
-etc/morpho_lowlight4.0.xml
-lib/libMiCameraHal.so
-lib/libdualcameraddm.so
-lib/libjni_dualcamera.so
-lib/libmorpho_groupshot.so
-lib/libmorpho_memory_allocator.so
-lib/libmorpho_panorama.so
-lib/libmorphohht4.0.so
-lib/libtrueportrait.so
+etc/morpho_lowlight4.0.xml:vendor/etc/morpho_lowlight4.0.xml
+lib/libMiCameraHal.so:vendor/lib/libMiCameraHal.so
+lib/libdualcameraddm.so:vendor/lib/libdualcameraddm.so
+lib/libjni_dualcamera.so:vendor/lib/libjni_dualcamera.so
+lib/libmorpho_groupshot.so:vendor/lib/libmorpho_groupshot.so
+lib/libmorpho_memory_allocator.so:vendor/lib/libmorpho_memory_allocator.so
+lib/libmorpho_panorama.so:vendor/lib/libmorpho_panorama.so
+lib/libmorphohht4.0.so:vendor/lib/libmorphohht4.0.so
+lib/libtrueportrait.so:vendor/lib/libtrueportrait.so
 vendor/bin/mm-qcamera-daemon
 vendor/lib/hw/camera.msm8953.so
 vendor/lib/libFaceGrade.so
