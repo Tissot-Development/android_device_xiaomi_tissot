@@ -21,6 +21,7 @@ symlink /vendor/lib/libmorpho_panorama.so /system/lib/libmorpho_panorama.so
 symlink /vendor/lib/libmorphohht4.0.so /system/lib/libmorphohht4.0.so
 symlink /vendor/lib/libtrueportrait.so /system/lib/libtrueportrait.so
 if [ ! -d "/system/etc/camera" ]; then mkdir /system/etc/camera; fi
+chmod 755 /system/etc/camera
 cd /vendor/etc/camera/
 for f in *; do
 	symlink /vendor/etc/camera/$f /system/etc/camera/$f
