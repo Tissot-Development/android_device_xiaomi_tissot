@@ -491,7 +491,21 @@ on property:wc_transport.start_hci=true
 
 on property:wc_transport.start_hci=false
     stop start_hci_filter
+    
+service hciattach /vendor/bin/hci_qcomm_init -e
+    class late_start
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
 
+on property:bluetooth.hciattach=true
+    start hciattach
+    setprop bluetooth.status on
+
+on property:bluetooth.hciattach=false
+    setprop bluetooth.status off
+    
 service start_hci_filter /system/vendor/bin/wcnss_filter
     class late_start
     user bluetooth
