@@ -1,6 +1,8 @@
 type_transition hal_fingerprint_default system_data_file:{ dir file } gx_fpd_data_file;
+typeattribute hal_fingerprint_default binder_in_vendor_violators;
 
 add_service(hal_fingerprint_default, goodix_fingerprint_vndservice);
+binder_use(hal_fingerprint_default);
 r_dir_file(hal_fingerprint_default, firmware_file);
 set_prop(hal_fingerprint_default, fingerprint_prop);
 vndbinder_use(hal_fingerprint_default);
