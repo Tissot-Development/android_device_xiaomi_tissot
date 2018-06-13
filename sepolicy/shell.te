@@ -1,3 +1,1 @@
 allow shell sysfs:file { read };
-allow shell treble_compat_exec:file entrypoint;
-

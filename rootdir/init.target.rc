@@ -70,14 +70,6 @@ on post-fs-data
     mkdir /data/vendor/camera 0770 camera camera
     mkdir /data/misc/camera 0770 camera camera
 
-#Script for Treble compatibility fixups
-service treblecompat /vendor/bin/init.treblecompat.sh
-	class core
-	user root
-	group root
-	seclabel u:r:shell:s0
-	oneshot
-
 #start camera server as daemon
 service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
