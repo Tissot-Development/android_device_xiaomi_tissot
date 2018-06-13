@@ -19,3 +19,5 @@ type sysfs_kcal, fs_type, sysfs_type;
 # Keylayout
 type keylayout, fs_type, sysfs_type;
 
+# ExFAT
+type sysfs_exfat, fs_type, sysfs_type;
