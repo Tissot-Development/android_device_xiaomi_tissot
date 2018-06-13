@@ -31,3 +31,5 @@
 # Kcal
 /sys/devices/platform/kcal_ctrl.0(/.*)?              u:object_r:sysfs_kcal:s0
 
+# Keylayout
+/vendor/usr/keylayout(/.*)?                             u:object_r:keylayout:s0
