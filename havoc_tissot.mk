@@ -24,6 +24,9 @@ $(call inherit-product, device/xiaomi/tissot/device.mk)
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/havoc/config/common.mk)
 
+# Boot Animation
+TARGET_BOOTANIMATION_HALF_RES := true
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := tissot
 PRODUCT_NAME := havoc_tissot
