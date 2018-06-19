@@ -43,6 +43,9 @@ PRODUCT_PACKAGES_DEBUG += \
     bootctl \
     update_engine_client
 
+# Boot Animation
+TARGET_BOOTANIMATION_HALF_RES := true
+
 # Boot control HAL
 PRODUCT_PACKAGES += \
     bootctrl.msm8953
