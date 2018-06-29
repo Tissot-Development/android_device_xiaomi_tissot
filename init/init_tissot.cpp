@@ -41,7 +41,6 @@ char const *heapgrowthlimit;
 char const *heapsize;
 char const *heapminfree;
 char const *heapmaxfree;
-char const *large_cache_height;
 
 
 static void init_alarm_boot_properties()
@@ -88,7 +87,6 @@ void check_device()
         heapsize = "512m";
         heapminfree = "4m";
         heapmaxfree = "8m";
-	large_cache_height = "2048";
     } else if (sys.totalram > 2048ull * 1024 * 1024) {
         // from - phone-xxhdpi-3072-dalvik-heap.mk
         heapstartsize = "8m";
@@ -96,7 +94,6 @@ void check_device()
         heapsize = "768m";
         heapminfree = "512k";
 	heapmaxfree = "8m";
-        large_cache_height = "1024";
     } else {
         // from - phone-xxhdpi-2048-dalvik-heap.mk
         heapstartsize = "16m";
@@ -104,7 +101,6 @@ void check_device()
         heapsize = "512m";
         heapminfree = "2m";
         heapmaxfree = "8m";
-        large_cache_height = "1024";
    }
 }
 
@@ -113,22 +109,10 @@ void vendor_load_properties()
     init_alarm_boot_properties();
     check_device();
 
-    android::init::property_set("dalvik.vm.heapstartsize", heapstartsize);
-    android::init::property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
-    android::init::property_set("dalvik.vm.heapsize", heapsize);
-    android::init::property_set("dalvik.vm.heaptargetutilization", "0.75");
-    android::init::property_set("dalvik.vm.heapminfree", heapminfree);
-    android::init::property_set("dalvik.vm.heapmaxfree", heapmaxfree);
-
-    android::init::property_set("ro.hwui.texture_cache_size", "72");
-    android::init::property_set("ro.hwui.layer_cache_size", "48");
-    android::init::property_set("ro.hwui.r_buffer_cache_size", "8");
-    android::init::property_set("ro.hwui.path_cache_size", "32");
-    android::init::property_set("ro.hwui.gradient_cache_size", "1");
-    android::init::property_set("ro.hwui.drop_shadow_cache_size", "6");
-    android::init::property_set("ro.hwui.texture_cache_flushrate", "0.4");
-    android::init::property_set("ro.hwui.text_small_cache_width", "1024");
-    android::init::property_set("ro.hwui.text_small_cache_height", "1024");
-    android::init::property_set("ro.hwui.text_large_cache_width", "2048");
-    android::init::property_set("ro.hwui.text_large_cache_height", large_cache_height);
+    property_set("dalvik.vm.heapstartsize", heapstartsize);
+    property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+    property_set("dalvik.vm.heapsize", heapsize);
+    property_set("dalvik.vm.heaptargetutilization", "0.75");
+    property_set("dalvik.vm.heapminfree", heapminfree);
+    property_set("dalvik.vm.heapmaxfree", heapmaxfree);
 }
