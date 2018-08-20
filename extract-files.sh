@@ -70,4 +70,13 @@ patchelf --replace-needed android.hardware.gnss@1.0.so android.hardware.gnss@1.0
 
 patchelf --replace-needed android.hardware.gnss@1.0.so android.hardware.gnss@1.0-v27.so $COMMON_BLOB_ROOT/lib64/vendor.qti.gnss@1.0.so
 
+if [ "$DEVICE" = "tissot" ]; then
+    # Hax for oreo cam hal
+    patchelf --replace-needed libicuuc.so libicuuc-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
+    patchelf --replace-needed libminikin.so libminikin-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
+    patchelf --replace-needed libskia.so libskia-v27.so $DEVICE_BLOB_ROOT/lib/libMiCameraHal.so
+    patchelf --set-soname libicuuc-v27.so $DEVICE_BLOB_ROOT/lib/libicuuc-v27.so 
+    patchelf --set-soname libminikin-v27.so $DEVICE_BLOB_ROOT/lib/libminikin-v27.so
+fi
+
 "$MY_DIR"/setup-makefiles.sh
