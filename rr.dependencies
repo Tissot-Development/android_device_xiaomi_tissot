@@ -5,9 +5,9 @@
    "branch"     : "lineage-15.1"
   },
   {
-    "repository" : "Tissot-Development/android_kernel_xiaomi_tissot",
+    "repository" : "mountaser/Moun_Kernel_Tissot",
     "target_path": "kernel/xiaomi/msm8953",
-    "branch"     : "8.1"
+    "branch"     : "9.0"
   },
   {
     "repository" : "Tissot-Development/android_vendor_xiaomi_tissot",
