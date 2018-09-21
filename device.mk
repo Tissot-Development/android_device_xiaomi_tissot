@@ -119,6 +119,15 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-service \
     bootctrl.msm8953
 
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.msm8953 \
+    libcutils \
+    libgptutils \
+    libz
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8953 \
@@ -126,7 +135,6 @@ PRODUCT_PACKAGES += \
     Gcam
 
 PRODUCT_PACKAGES += \
-    camera.device@3.1-impl \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \

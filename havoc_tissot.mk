@@ -46,15 +46,6 @@ PRODUCT_PACKAGES_DEBUG += \
 # Boot Animation
 TARGET_BOOTANIMATION_HALF_RES := true
 
-# Boot control HAL
-PRODUCT_PACKAGES += \
-    bootctrl.msm8953
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.msm8953 \
-    libgptutils \
-    libz
-
 PRODUCT_NAME := havoc_tissot
 BOARD_VENDOR := Xiaomi
 
