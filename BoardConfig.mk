@@ -223,7 +223,7 @@ BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/minimal
 
 # Wi-Fi
 BOARD_HAS_QCOM_WLAN := true
