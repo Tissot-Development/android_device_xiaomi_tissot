@@ -17,7 +17,7 @@
 $(call inherit-product, device/xiaomi/tissot/full_tissot.mk)
 
 # Inherit some common HavocOS stuff.
-$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+$(call inherit-product, vendor/havoc/config/common.mk)
 
 # A/B updater
 AB_OTA_UPDATER := true
