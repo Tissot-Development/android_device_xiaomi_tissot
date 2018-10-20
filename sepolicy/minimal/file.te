@@ -1,3 +1,0 @@
-type dsp_file, file_type;
-type firmware_file, fs_type, contextmount_type;
-type persist_file, file_type;
