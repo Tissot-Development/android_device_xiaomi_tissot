@@ -42,7 +42,7 @@ BOARD_ROOT_EXTRA_FOLDERS := dsp firmware persist
 VENDOR_SECURITY_PATCH := 2018-10-05
 
 # Sepolicy
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/tissot/BoardConfigVendor.mk
