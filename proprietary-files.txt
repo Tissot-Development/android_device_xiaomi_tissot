@@ -1,13 +1,13 @@
 # Audio ACDB
-vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb|f0bc6a73a0db4372d5bf1b06759eb5c19b47777b
 vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb|82abc2611cbe77529752aa6a6d44c96f5f029e8f
+vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb|abd97bbc577db569cb974f7a55a17382e5d2ddde
 vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb|6a1a9c4f97269cbeec07fb314ee76035bbc57841
+vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb|1d100ce3b63f8d5a8e6ae9728a0cbb823689953e
 vendor/etc/acdbdata/QRD/QRD_adsp_avs_config.acdb
-vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
+vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp|73bf1280e1d33c8c4fff606692ecdfeb1e815475
 
 # Camera
 etc/dualcamera.png
@@ -383,6 +383,7 @@ vendor/lib/libmmcamera_isp_gamma40.so
 vendor/lib64/hw/consumerir.default.so
 
 # Fingerprint
+lib64/hw/fingerprint.default.so|4f1091ad3330284cf85ace54d861750a7aad78ff
 lib64/hw/gf_fingerprint.default.so
 lib64/libgf_algo.so
 lib64/libgf_ca.so
@@ -396,4 +397,3 @@ vendor/framework/com.fingerprints.extension.jar
 vendor/lib64/com.fingerprints.extension@1.0.so
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
-vendor/lib64/hw/fingerprint.default.so
