@@ -1,0 +1,22 @@
+[
+  {
+   "repository": "LineageOS/android_device_qcom_common",
+   "target_path": "device/qcom/common",
+   "branch"     : "lineage-15.1"
+  },
+  {
+    "repository" : "android_device_xiaomi_msm8953-common",
+    "target_path": "device/xiaomi/msm8953-common",
+    "branch"     : "9.0-4.9"
+  },
+  {
+    "repository" : "mountaser/Moun_Kernel_Tissot",
+    "target_path": "kernel/xiaomi/msm8953",
+    "branch"     : "9.0-4.9"
+  },
+  {
+    "repository" : "Tissot-Development/android_vendor_xiaomi_tissot",
+    "target_path": "vendor/xiaomi/tissot",
+    "branch"     : "9.0-4.9"
+  }
+]

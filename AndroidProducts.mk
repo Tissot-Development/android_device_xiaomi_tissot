@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/havoc_tissot.mk
+    $(LOCAL_DIR)/rr_tissot.mk
