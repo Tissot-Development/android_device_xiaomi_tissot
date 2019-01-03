@@ -39,7 +39,7 @@ TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 VENDOR_SECURITY_PATCH := 2018-12-05
 
 # Sepolicy
-#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/tissot/BoardConfigVendor.mk
