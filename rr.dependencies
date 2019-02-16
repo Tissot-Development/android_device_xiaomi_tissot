@@ -5,7 +5,12 @@
    "branch"     : "lineage-15.1"
   },
   {
-    "repository" : "android_device_xiaomi_msm8953-common",
+    "repository": "LineageOS/android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings",
+    "branch": "lineage-16.0"
+  },
+  {
+    "repository" : "Tissot-Development/android_device_xiaomi_msm8953-common",
     "target_path": "device/xiaomi/msm8953-common",
     "branch"     : "9.0-4.9"
   },
@@ -15,8 +20,8 @@
     "branch"     : "9.0-4.9"
   },
   {
-    "repository" : "Tissot-Development/android_vendor_xiaomi_tissot",
-    "target_path": "vendor/xiaomi/tissot",
-    "branch"     : "9.0-4.9"
+    "repository" : "TheMuppets/proprietary_vendor_xiaomi",
+    "target_path": "vendor/xiaomi",
+    "branch"     : "lineage-16.0"
   }
 ]
